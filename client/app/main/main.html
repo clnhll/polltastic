@@ -3,8 +3,8 @@
 <header class="hero-unit" id="banner">
   <div class="container">
     <h1>Pollarama</h1>
-    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+    <i ng-hide="isLoggedIn()" class="fa fa-line-chart chartIcon"></i>
+    <div ng-show="isLoggedIn()"><a href="newpoll/" class="btn btn-primary">New Poll</a>&nbsp;<a href="mypolls/" class="btn btn-success ">My Polls</a>
   </div>
 </header>
 
@@ -12,9 +12,18 @@
   <div class="row">
     <div class="col-lg-12">
       <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}</a></li>
-      </ul>
+      <div class="col-xs-4 text-center"><i class="fa fa-pie-chart pieIcon"></i>
+      <p>All your statistics at a glance</p>
+      </div>
+      <div class="col-xs-4 text-center"><i class="fa fa-globe globeIcon"></i>
+      <p>Anyone can access, anywhere, all the time</p>
+
+      </div>
+      <div class="col-xs-4 text-center"><i class="fa fa-users usersIcon"></i>
+      <p>Super democracy fun time!</p>
+
+      </div>
+
     </div>
   </div>
 </div>
