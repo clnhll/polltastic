@@ -41,3 +41,29 @@
 .usersIcon {
   color: rgb(255,240,120)
 }
+.nav li a {
+  float:left;
+}
+.nav li a:hover {
+  border-bottom: 0;
+  padding-bottom: 11px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.nav li i {
+  position: inline;
+  padding: 12px;
+}
+.nav li i:hover{
+  background: rgb(238,238,238);
+  border-radius:5px;
+
+}
+.nav, .nav-tabs, .nav-stacked {
+  border-bottom: 0;
+}
+.formchoice i {
+  float: right;
+  margin-top:-18pt;
+  margin-right:10px
+}

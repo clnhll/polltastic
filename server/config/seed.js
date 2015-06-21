@@ -48,3 +48,21 @@ User.find({}).remove(function() {
     }
   );
 });
+/**
+Poll.find({}).remove(function() {
+  Poll.create(
+        {
+          title:"whats u bird like",
+          choices: [{name: "guud", votes: 3},{name: "baad", votes:2}],
+          owner: "Test User",
+          voted: ["Test User"]
+        },
+        {
+          title:"i gotta itch",
+          choices: [{name: "oh no",votes: 2},{name: "ew", votes:10342178}],
+          owner: "Test",
+          voted: []
+        }
+      );
+});
+**/
