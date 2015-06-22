@@ -29,7 +29,7 @@
     border-top: 1px solid #E5E5E5;
 }
 .pieIcon, .globeIcon, .usersIcon, .chartIcon {
-  font-size: 100pt;
+  font-size: 80pt;
   padding-bottom: 10pt;
 }
 .pieIcon {
@@ -41,29 +41,34 @@
 .usersIcon {
   color: rgb(255,240,120)
 }
-.nav li a {
+.mypolls .nav li a {
   float:left;
 }
-.nav li a:hover {
+.mypolls .nav li a:hover {
   border-bottom: 0;
   padding-bottom: 11px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-.nav li i {
+.mypolls .nav li i {
   position: inline;
   padding: 12px;
 }
-.nav li i:hover{
+.mypolls .nav li i:hover{
   background: rgb(238,238,238);
   border-radius:5px;
 
 }
-.nav, .nav-tabs, .nav-stacked {
+.mypolls .nav, .nav-tabs, .nav-stacked {
   border-bottom: 0;
 }
 .formchoice i {
   float: right;
   margin-top:-18pt;
   margin-right:10px
+}
+mark {
+  border: 1px dotted #999;
+  border-radius: 2px;
+  background: #FFFFCC;
 }
