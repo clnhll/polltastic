@@ -72,3 +72,9 @@ mark {
   border-radius: 2px;
   background: #FFFFCC;
 }
+#chart_div{
+  width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
