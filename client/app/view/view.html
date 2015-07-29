@@ -1,0 +1,45 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Pollarama</h1>
+    <i ng-hide="isLoggedIn()" class="fa fa-line-chart chartIcon"></i>
+    <div ng-show="isLoggedIn()"><a href="newpoll/" class="btn btn-primary">New Poll</a>&nbsp;<a href="mypolls/" class="btn btn-success">My Polls</a>
+  </div>
+</header>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>{{poll.title}}</h1>
+      <h3> by {{poll.owner}}</h3>
+
+      <div id="chart_div" ng-show="poll.voted.length!==0" class="center-block"></div>
+
+      <form ng-submit="vote()" ng-show="poll.voted.indexOf(getCurrentUser()._id) === -1 && isLoggedIn()">
+        <div class="radio" ng-repeat="choice in poll.choices">
+
+          <label>
+            <input type="radio" ng-model="formData.selection" name="optionsRadios" value="{{$index}}">
+            {{choice.name}}
+          </label>
+        </div>
+
+        <a class="btn btn-default" ng-click="addChoice()">Other...</a>&nbsp;<button type="submit" class="btn btn-primary">Vote</button>
+      </form>
+
+      <div ng-show="(poll.voted.indexOf(getCurrentUser()._id) !== -1 || poll.ownerid==getCurrentUser()._id || !isLoggedIn()) && poll.voted.length!==0" class="mypolls">
+      <ul class="nav nav-tabs nav-stacked col-sm-12" ng-repeat="choice in poll.choices">
+        <li><a>{{choice.name}}</a><i class="fa fa-check"> {{choice.votes}}</i></li>
+      </ul>
+      </div>
+
+      <div class="col-sm-12" style="padding-top:20px">Want to share this poll? Give this link to your friends: <br /> <mark> http://polltastic.herokuapp.com/{{spinalCase(poll.owner)}}/{{poll._id}}</mark></div>
+
+    </div>
+    <div class="col-sm-12">
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Pollarama</h1>
+    <i ng-hide="isLoggedIn()" class="fa fa-line-chart chartIcon"></i>
+    <div ng-show="isLoggedIn()"><a href="newpoll/" class="btn btn-primary">New Poll</a>&nbsp;<a href="mypolls/" class="btn btn-success ">My Polls</a>
+  </div>
+</header>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>New Poll</h1>
+
+      <form ng-submit="addPoll()">
+       <div class="form-group">
+
+         <label for="pollTitle">Poll Title (required)</label>
+
+         <input type="text" class="form-control" ng-model="pollTitle" placeholder="What's your favorite soda brand?">
+
+       </div>
+
+       <div class="form-group">
+
+         <label>Choices (at least two)</label>
+         <div ng-repeat="placeholder in placeHolders" class="formchoice">
+           <input type="text" class="form-control"  placeholder="{{placeholder}}" ng-model="choices[$index]" required><i style="cursor:pointer; color:indianred" ng-click="removeChoice($index)" class="fa fa-times"></i>
+        </div>
+       </div>
+
+       <a class="btn btn-default" ng-click="addChoice()">Add Choices...</a>
+       <button type="submit" class="btn btn-default">Submit</button>
+     </form>
+
+    </div>
+  </div>
+</div>

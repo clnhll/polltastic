@@ -1,0 +1,28 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Pollarama</h1>
+    <i ng-hide="isLoggedIn()" class="fa fa-line-chart chartIcon"></i>
+    <div ng-show="isLoggedIn()"><a href="newpoll/" class="btn btn-primary">New Poll</a>&nbsp;<a href="mypolls/" class="btn btn-success ">My Polls</a>
+  </div>
+</header>
+
+
+<div class="container">
+  <div class="row mypolls">
+    <div class="col-sm-12">
+      <h1>Manage Polls</h1>
+      <p ng-show="polls.length===0">
+        No polls here! Why don't you go <a href="/newpoll">make a new poll?</a>
+      </p>
+      <ul class="nav nav-tabs nav-stacked col-sm-12" ng-repeat="poll in polls | orderBy:'-created'">
+        <li><a ng-href="{{spinalCase(poll.owner) + '/' + poll._id}}" tooltip="{{poll.title}}">{{poll.title}}</a><i style="cursor:pointer; color:indianred" ng-click="deletePoll(poll)" class="fa fa-times"></i></li>
+      </ul>
+
+    </div>
+    <div class="col-sm-12">
+
+    </div>
+  </div>
+</div>
